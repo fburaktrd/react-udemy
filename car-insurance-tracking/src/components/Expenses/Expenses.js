@@ -5,7 +5,7 @@ import ExpensesFilter from './ExpensesFilter';
 import './Expenses.css';
 
 const Expenses = (props)=>{
-    const items = props.comps.map((comp)=> <ExpenseItem title={comp.title} date={comp.date} amount={comp.amount}/>)
+    const items = props.items.map((comp)=> <ExpenseItem title={comp.title} date={comp.date} amount={comp.amount}/>)
     
     const [filteredYear, setFilteredYear] = useState('2020');
 
@@ -16,6 +16,7 @@ const Expenses = (props)=>{
         
         <Card className="expenses">
         <ExpensesFilter selected={filteredYear} onChangeFilter = {filterChangeHandler}/>
+            
             {items}
         </Card>
        
