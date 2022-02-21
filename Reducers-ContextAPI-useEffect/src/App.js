@@ -13,8 +13,9 @@ function App() {
   useEffect(()=>{
     const storedUserLoggedInInfo = localStorage.getItem('isLoggedIn');
     if(storedUserLoggedInInfo === '1'){
-    console.log(storedUserLoggedInInfo);
-    setIsLoggedIn(true);
+      
+      console.log(storedUserLoggedInInfo);
+      setIsLoggedIn(true);
   }},[])
 
   const loginHandler = (email, password) => {
@@ -29,8 +30,8 @@ function App() {
   };
 
   return (
-      <AuthContext.Provider value={{isLoggedIn: isLoggedIn}}>
-      <MainHeader onLogout={logoutHandler} />
+      <AuthContext.Provider value={{isLoggedIn: isLoggedIn, onLogout: logoutHandler}}>
+      <MainHeader/>
       <main>
         {!isLoggedIn && <Login onLogin={loginHandler} />}
         {isLoggedIn && <Home onLogout={logoutHandler} />}
