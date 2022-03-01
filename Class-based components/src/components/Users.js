@@ -1,5 +1,4 @@
 import { Component, useState } from 'react';
-import { findRenderedDOMComponentWithClass } from 'react-dom/cjs/react-dom-test-utils.production.min';
 import User from './User';
 
 import classes from './Users.module.css';
