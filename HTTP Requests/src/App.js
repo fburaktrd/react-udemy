@@ -9,7 +9,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const url = 'https://react-udemy-{app_id}-default-rtdb.firebaseio.com/movies.json';
+  const url = 'https://react-udemy-73106-default-rtdb.firebaseio.com/movies.json';
 
   const fetchMoviesHandler = useCallback(async () => {
     setIsLoading(true);
