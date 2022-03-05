@@ -7,7 +7,7 @@ import useHttp from "./hooks/use-http";
 function App() {
   const [tasks, setTasks] = useState([]);
 
-  const transfromTasks = taskObj => {
+  const transfromTasks = (taskObj) => {
     const loadedTasks = [];
 
       for (const taskKey in taskObj) {
@@ -17,14 +17,14 @@ function App() {
       setTasks(loadedTasks);
   };
 
-  const {isLoading, error, sendRequest: fetchTasks} = useHttp({
-    url: "https://react-udemy-app-id-default-rtdb.firebaseio.com/tasks.json",
-  },transfromTasks);
+  const {isLoading, error, sendRequest: fetchTasks} = useHttp();
 
 
   useEffect(() => {
-    fetchTasks();
-  }, []);
+    fetchTasks({
+      url: "https://react-udemy-app-id-default-rtdb.firebaseio.com/tasks.json",
+    },transfromTasks);
+  }, [fetchTasks]);
 
   const taskAddHandler = (task) => {
     setTasks((prevTasks) => prevTasks.concat(task));
