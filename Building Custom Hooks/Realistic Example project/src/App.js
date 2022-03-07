@@ -22,7 +22,7 @@ function App() {
 
   useEffect(() => {
     fetchTasks({
-      url: "https://react-udemy-app-id-default-rtdb.firebaseio.com/tasks.json",
+      url: "https://react-udemy-73106-default-rtdb.firebaseio.com/tasks.json",
     },transfromTasks);
   }, [fetchTasks]);
 
