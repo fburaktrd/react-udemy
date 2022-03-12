@@ -26,7 +26,6 @@ const Counter = () => {
   const toggleCounterHandler = () => {
     dispatch(counterActions.toggleCounter())
   };
-  console.log(show,counter);
   return (
     <main className={classes.counter}>
       <h1>Redux Counter</h1>
